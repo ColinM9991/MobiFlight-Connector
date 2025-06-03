@@ -698,4 +698,7 @@ Website wird nach Betätigung von OK geöffnet.</value>
   <data name="uiMessagePythonHint" xml:space="preserve">
     <value>Python Umgebung nicht bereit</value>
   </data>
+  <data name="uiMessageValidationMustBeUrl" xml:space="preserve">
+    <value />
+  </data>
 </root>

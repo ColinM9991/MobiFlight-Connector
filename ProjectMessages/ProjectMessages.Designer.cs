@@ -1421,6 +1421,15 @@ namespace MobiFlight.ProjectMessages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The request URL must be a valid and absolute URL. Example: http://localhost:8080/path.
+        /// </summary>
+        internal static string uiMessageValidationMustBeUrl {
+            get {
+                return ResourceManager.GetString("uiMessageValidationMustBeUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Value must be a number between {0} and {1}..
         /// </summary>
         internal static string uiMessageValidNumberInRange {

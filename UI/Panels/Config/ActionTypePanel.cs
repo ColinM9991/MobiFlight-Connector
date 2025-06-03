@@ -41,6 +41,9 @@ namespace MobiFlight.UI.Panels.Config
             ActionTypeComboBox.Items.Add(InputConfig.PmdgEventIdInputAction.Label);
             ActionTypeComboBox.Items.Add(InputConfig.JeehellInputAction.Label);
             ActionTypeComboBox.Items.Add(InputConfig.LuaMacroInputAction.Label);
+            
+            // HTTP - TODO: support only for buttons to prevent request spam
+            ActionTypeComboBox.Items.Add(InputConfig.HttpInputAction.Label);
 
             ActionTypeComboBox.SelectedIndex = 0;
             ActionTypeComboBox.SelectedIndexChanged += new EventHandler(ActionTypeComboBox_SelectedIndexChanged);
@@ -108,6 +111,10 @@ namespace MobiFlight.UI.Panels.Config
 
                 case "MobiFlight.InputConfig.XplaneInputAction":
                     ComboBoxHelper.SetSelectedItem(ActionTypeComboBox, MobiFlight.InputConfig.XplaneInputAction.Label);
+                    break;
+
+                case "MobiFlight.InputConfig.HttpInputAction":
+                    ComboBoxHelper.SetSelectedItem(ActionTypeComboBox, HttpInputAction.Label);
                     break;
             }
         }

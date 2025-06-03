@@ -36,7 +36,8 @@ namespace MobiFlight.UI.Panels.Config
             { MSFS2020EventIdInputAction.Label, typeof(MSFS2020CustomInputPanel) },
             { MSFS2020CustomInputAction.Label, typeof(MSFS2020CustomInputPanel) },
             { VariableInputAction.Label, typeof(VariableInputPanel) },
-            { XplaneInputAction.Label, typeof(XplaneInputPanel) }
+            { XplaneInputAction.Label, typeof(XplaneInputPanel) },
+            { HttpInputAction.Label, typeof(HttpRequestInputPanel) }
         };
     }
 }

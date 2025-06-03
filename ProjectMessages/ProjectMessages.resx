@@ -663,4 +663,7 @@ Page will be opened, when pressing OK.</value>
   <data name="uiMessagePythonHint" xml:space="preserve">
     <value>Python environment not ready</value>
   </data>
+  <data name="uiMessageValidationMustBeUrl" xml:space="preserve">
+    <value>The request URL must be a valid and absolute URL. Example: http://localhost:8080/path</value>
+  </data>
 </root>

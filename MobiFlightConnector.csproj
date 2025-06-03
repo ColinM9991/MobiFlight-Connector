@@ -310,6 +310,7 @@
     <Compile Include="MobiFlight\I2CPinInUseException.cs" />
     <Compile Include="MobiFlight\I2CPinsNotDefinedException.cs" />
     <Compile Include="MobiFlight\InputConfig\AnalogInputConfig.cs" />
+    <Compile Include="MobiFlight\InputConfig\HttpInputAction.cs" />
     <Compile Include="MobiFlight\InputConfig\InputMultiplexerConfig.cs" />
     <Compile Include="MobiFlight\InputConfig\InputActionExecutionCache.cs" />
     <Compile Include="MobiFlight\InputConfig\InputActionFactory.cs" />
@@ -486,6 +487,12 @@
     </Compile>
     <Compile Include="UI\Panels\About\LicenseReferenceControl.Designer.cs">
       <DependentUpon>LicenseReferenceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Panels\Action\HttpRequestInputPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Panels\Action\HttpRequestInputPanel.Designer.cs">
+      <DependentUpon>HttpRequestInputPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Panels\Action\MSFS2020CustomInputPanel.cs">
       <SubType>UserControl</SubType>
@@ -1500,6 +1507,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Panels\About\LicenseReferenceControl.resx">
       <DependentUpon>LicenseReferenceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Panels\Action\HttpRequestInputPanel.resx">
+      <DependentUpon>HttpRequestInputPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Panels\Action\MSFS2020CustomInputPanel.de.resx">
       <DependentUpon>MSFS2020CustomInputPanel.cs</DependentUpon>
