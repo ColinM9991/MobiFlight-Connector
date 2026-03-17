@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main, mf2025/main ]
     paths:
-      - 'Scripts/**/*.py'
+      - '**/Scripts/**/*.py'
 
 jobs:
   python-script-checks:
