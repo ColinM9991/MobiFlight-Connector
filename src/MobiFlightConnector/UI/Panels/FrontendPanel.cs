@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Web.WebView2.Core;
 
 namespace MobiFlight.UI.Panels
 {
@@ -43,17 +44,29 @@ namespace MobiFlight.UI.Panels
                 InitializeAsync();
         }
 
-        async void InitializeAsync()
+        private async Task InitializeAsync()
         {
-            await FrontendWebView.EnsureCoreWebView2Async(null);
-            await UserAuthenticationWebView.EnsureCoreWebView2Async(null);
+            var basePath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "MobiFlight",
+                "WebView2");
 
-            // MainForm's constructor already set the WebSocket publisher on MessageExchange.
+            var frontendEnvironment = await CoreWebView2Environment.CreateAsync(
+                userDataFolder: Path.Combine(basePath, "Frontend"));
+
+            var authenticationEnvironment = await CoreWebView2Environment.CreateAsync(
+                userDataFolder: Path.Combine(basePath, "Authentication"));
+
+            await FrontendWebView.EnsureCoreWebView2Async(frontendEnvironment);
+            await UserAuthenticationWebView.EnsureCoreWebView2Async(authenticationEnvironment);
+
+            // MainForm's constructor already set the WebSocket publisher.
             await InitializeWebView(FrontendWebView, "/start", injectWsUrl: true);
 
-            // Auth WebView stays on postMessage - see docs/architecture/frontend-backend-messaging.md.
+            // Auth WebView stays on postMessage.
             new WebViewMessageReceiver(UserAuthenticationWebView).MessageReceived
                 += MessageExchange.Instance.PublishReceivedMessage;
+
             await InitializeWebView(UserAuthenticationWebView, "/", injectWsUrl: false);
         }
 
